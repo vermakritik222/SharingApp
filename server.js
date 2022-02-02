@@ -1,26 +1,28 @@
-const express = require('express');
-const path = require('path');
-const donenv = require('dotenv').config();
-const cors = require('cors');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const app = require('./app');
+// DB connection
+const DB = process.env.MONGO_CONNECTION_URL.replace(
+    '<PASSWORD>',
+    process.env.DATABASE_CONNECTION_PASSWORD
+);
 
-const app = express();
-
-app.use(express.static(`${__dirname}/public`));
-app.use(express.json());
-
-const connectDB = require('./config/db');
-connectDB();
-
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
-
-app.use('/api/files', require('./router/file'));
-app.use('/files/download', require('./router/download'));
-app.use('/files', require('./router/show'));
-
-app.get('/', (req, res) => {
-    res.send('hello world');
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true, // to remove error on consol
 });
+
+const connection = mongoose.connection;
+
+connection
+    .once('open', () => {
+        console.log('DB is connected to app.....');
+    })
+    .catch((err) => {
+        console.log(`db error ${err.message}`);
+    });
 
 const port = process.env.PORT || 8000;
 

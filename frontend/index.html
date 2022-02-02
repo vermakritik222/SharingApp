@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <title>Sharing APP</title>
+    </head>
+    <body>
+        <div class="logo">Sharing App</div>
+        <div class="container">
+            <div class="container__drop">
+                <img class="container__img" src="/img/698394.svg" alt="" />
+                <h2 class="container__description">
+                    Drag and Drop your file hear
+                </h2>
+                <input type="file" class="container__file" />
+            </div>
+            <div class="uploader">
+                <span id="uploade__span"></span>
+                <h4 id="uploade__persent">0%</h4>
+            </div>
+            <div class="linkBox">
+                <div class="linkBox__cover">
+                    <input type="text" id="linkBox__cover__input" readonly />
+                    <img
+                        src="/img/files.svg"
+                        id="linkBox__cover__inputCopy"
+                        alt="copy"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="toast">Sample message</div>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
