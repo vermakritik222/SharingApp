@@ -4,8 +4,8 @@
 
 ## Home page
 
-<img src="./screenshots/home_screen.png"/>
+<img src="./Screenshots/home_screen.png"/>
 
 ## Downlode page
 
-<img src="./screenshots/downlode_screen.png"/>
+<img src="./Screenshots/downlode_screen.png"/>
