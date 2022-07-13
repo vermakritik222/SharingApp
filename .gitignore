@@ -1,6 +1,11 @@
+node_modules
 .env
+
 uploads/*
 !uploads/.gitkeep
-node_modules
+
+
 x.js
-/db/data
+
+db/*
+!db/.gitkeep
