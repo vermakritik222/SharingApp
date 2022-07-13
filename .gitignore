@@ -3,3 +3,4 @@ uploads/*
 !uploads/.gitkeep
 node_modules
 x.js
+/db/data
