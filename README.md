@@ -1,5 +1,7 @@
 # Sharing App
 
+you can run application demo on heroku [here](https://share2024.herokuapp.com)
+
 ```powershell
 $ huroku login
 
