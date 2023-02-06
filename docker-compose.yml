@@ -13,9 +13,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: app:tag
+    image: app
     ports:
       - 8000:8000
+    environment:
+      - MONGO_CONNECTION_URL=mongodb://mongoadmin:<PASSWORD>@mongodb
+      - DATABASE_CONNECTION_PASSWORD=secret 
+      - APP_BASE_URL=http://127.0.0.1:8000
+      - PORT=8000
   mongo-express:
     image: mongo-express
     ports:
@@ -24,3 +29,6 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=mongoadmin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=secret
       - ME_CONFIG_MONGODB_SERVER=mongodb
+    depends_on:
+      - mongodb
+      - app

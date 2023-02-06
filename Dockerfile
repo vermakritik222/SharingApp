@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:16-alpine3.16
 
 WORKDIR /app
 
@@ -8,4 +8,4 @@ RUN npm i
 
 COPY . .
 
-CMD ["node","server.js","--bind" ,"0.0.0.0:$PORT"]
+CMD ["node","server.js"]
